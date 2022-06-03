@@ -33,7 +33,7 @@ export const loadRecipe = async function (id) {
   }
 };
 
-export const loadSearchRecipe = async function (query) {
+export const loadSearchResults = async function (query) {
   try {
     state.search.query = query;
 
