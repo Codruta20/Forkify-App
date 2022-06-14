@@ -28,7 +28,6 @@ export default class View {
         !newEl.isEqualNode(currEl) &&
         newEl.firstChild?.nodeValue.trim() !== ''
       ) {
-        console.log('###', newEl.firstChild.nodeValue.trim());
         currEl.textContent = newEl.textContent;
       }
       if (!newEl.isEqualNode(currEl)) console.log(Array.from(newEl.attributes));
