@@ -3,7 +3,6 @@ import View from './View';
 import icons from 'url:../../img/icons.svg';
 import { Fraction } from 'fractional';
 import { updateServings } from '../model';
-console.log(Fraction);
 
 class RecipeView extends View {
   _parentElement = document.querySelector('.recipe');
@@ -32,6 +31,7 @@ class RecipeView extends View {
   }
 
   _generateMarkup() {
+    console.log(this._data);
     return `
       <figure class="recipe__fig">
             <img src="${this._data.image}" alt="${
