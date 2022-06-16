@@ -7,10 +7,7 @@ export default class View {
       return this.renderError();
 
     this._data = data;
-    console.log(data);
     const markup = this._generateMarkup();
-    console.log(markup);
-    console.log(render);
     if (!render) return markup;
 
     this._clear();
@@ -27,7 +24,6 @@ export default class View {
 
     newElements.forEach((newEl, i) => {
       const currEl = currElements[i];
-      console.log(currEl, newEl.isEqualNode(currEl));
 
       if (
         !newEl.isEqualNode(currEl) &&
@@ -35,10 +31,10 @@ export default class View {
       ) {
         currEl.textContent = newEl.textContent;
       }
-      if (!newEl.isEqualNode(currEl)) console.log(Array.from(newEl.attributes));
-      Array.from(newEl.attributes).forEach(attr =>
-        currEl.setAttribute(attr.name, attr.value)
-      );
+      if (!newEl.isEqualNode(currEl))
+        Array.from(newEl.attributes).forEach(attr =>
+          currEl.setAttribute(attr.name, attr.value)
+        );
     });
   }
 
